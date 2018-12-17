@@ -1,0 +1,96 @@
+*:focus {
+  outline: none;
+}
+
+.app {
+  /* font-size: 10px; */
+  width: 100%;
+  padding-left: 0em;
+  padding-right: 0em;
+  padding-bottom: 0em;
+  /* flex: 0 0 auto; */
+}
+
+[id*="menuAppBar"] + .app {
+  margin-top: calc(6 * 8px);
+}
+
+.app div,
+.app section,
+.app article {
+  /* flex: 0 0 auto; */
+  /* font-size: 10px; */
+}
+
+.app-logo {
+  animation: app-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.app-header {
+  /* background-color: rgb(255, 167, 38); Primary 1 */
+  background-color: #003349; /* Primary 2 */
+  height: 48px;
+  padding: 10px;
+  color: #000000;
+}
+
+.app-title {
+  font-size: 1.5em;
+}
+
+@keyframes app-logo-spin {
+  0% {
+    transform: scale(0.6);
+  }
+  20% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(0.6);
+  }
+  60% {
+    transform: scale(1);
+  }
+  80% {
+    transform: scale(0.6);
+  }
+  100% {
+    transform: scale(1);
+  }
+  /* TODO: OLD ROTATION 0% { transform: rotate(0deg); }
+	25% { transform: rotate(30deg); }
+	50% { transform: rotate(25deg); }
+  75% { transform: rotate(-10deg); }
+  100% { transform: rotate(0deg); } */
+}
+
+@media screen and (min-width: 600px) {
+  [id*="menuAppBar"] + .app {
+    margin-top: calc(6 * 8px);
+  }
+}
+
+@media screen and (min-width: 421px) {
+  .app {
+    -webkit-display: unset;
+    flex-wrap: wrap;
+    padding-bottom: 0;
+    height: 92%;
+    /* flex: 0 0 auto; */
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .app {
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* justify-content: center; */
+    padding-bottom: 1.6rem;
+    height: 90vh;
+    /* flex: 0 0 auto; */
+  }
+}
