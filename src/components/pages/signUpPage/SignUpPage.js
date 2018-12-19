@@ -42,7 +42,7 @@ class SignUpPage extends React.Component {
           name: name,
           email: email,
           password: password,
-          tipo: type
+          type: type ? "produtor" : "consumidor"
         });
         AccountManager.loadUser(sessionUser.user.uid).then(user => {
           setLoggedUser({ [user.id]: user.data() });

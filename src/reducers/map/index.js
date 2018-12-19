@@ -2,7 +2,14 @@ const INITIAL_STATE = {
   userLocation: null,
   markers: null,
   activeMarker: null,
-  create: null
+  create: null,
+  location: null,
+  desc: null,
+  title: null,
+  produtor_nome: [],
+  produtor_quant: null,
+  consum_quant: null,
+  date: null
 };
 
 const mapReducer = (state = INITIAL_STATE, action) => {
@@ -17,6 +24,10 @@ const mapReducer = (state = INITIAL_STATE, action) => {
       return Object.assign({}, state, { activeMarker: action.marker });
     case "CREATE_FEIRA_DIALOG_STATE":
       return Object.assign({}, state, { create: action.value });
+    case "SET_FEIRA_LOCATION":
+      return Object.assign({}, state, { location: action.value });
+    case "SET_FORM_VALUE":
+      return Object.assign({}, state, action.value);
     default:
       return state;
   }

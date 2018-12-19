@@ -1,6 +1,7 @@
 const INITIAL_STATE = {
   toogle: null,
-  value: 0
+  value: 0,
+  item: 0
 };
 
 const navigationReducer = (state = INITIAL_STATE, action) => {
@@ -9,6 +10,8 @@ const navigationReducer = (state = INITIAL_STATE, action) => {
       return Object.assign({}, state, { toogle: action.value });
     case "SET_TAB_VALUE":
       return Object.assign({}, state, { value: action.value });
+    case "SET_TAB_ITEM":
+      return Object.assign({}, state, { item: action.value });
     default:
       return state;
   }

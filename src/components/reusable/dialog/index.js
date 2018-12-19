@@ -37,6 +37,7 @@ class FeiraDialog extends React.Component {
   }
   render() {
     const { activeMarker, value, classes, produtores } = this.props;
+    const key = Object.keys(activeMarker)[0];
     return (
       <Dialog
         open={!!activeMarker}
@@ -61,14 +62,18 @@ class FeiraDialog extends React.Component {
               {value === 0 && (
                 <div>
                   <List>
-                    <ListItem>Criado Por: Davi</ListItem>
-                    <ListItem>Produtores confirmados: 1</ListItem>
-                    <ListItem>consumidores confirmados: 12</ListItem>
-                  </List>
-                  <List>
-                    <ListItem>Data: 28/12/2018</ListItem>
-                    <ListItem>Local: Rua Bento Alves</ListItem>
-                    <ListItem>Horario: 17h as 19h</ListItem>
+                    {/* <ListItem>Criado Por: Davi</ListItem> */}
+                    <ListItem> Titulo: {activeMarker[key].title}</ListItem>
+                    <ListItem>Descrição: {activeMarker[key].desc}</ListItem>
+                    <ListItem>
+                      Produtores confirmados: {activeMarker[key].produtor_quant}
+                    </ListItem>
+                    <ListItem>
+                      Consumidores confirmados: {activeMarker[key].consum_quant}
+                    </ListItem>
+                    <ListItem>
+                      Data: {activeMarker[key].date.replace("T", " ")}
+                    </ListItem>
                   </List>
                 </div>
               )}
@@ -76,9 +81,9 @@ class FeiraDialog extends React.Component {
               {value === 2 && (
                 <div>
                   <List>
-                    <ListItem>
+                    {/* <ListItem>
                       Produto A <div>quant: 10</div>
-                    </ListItem>
+                    </ListItem> */}
                   </List>
                 </div>
               )}

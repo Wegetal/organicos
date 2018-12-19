@@ -35,7 +35,6 @@ class MapPage extends React.Component {
       create,
       openCreateModal
     } = this.props;
-    console.log(create);
     return (
       <div>
         {!pos && (
@@ -56,7 +55,7 @@ class MapPage extends React.Component {
           />
         )}
         {activeMarker && <FeiraDialog />}
-        {create && <CreateFeiraDialog />}
+        {create && <CreateFeiraDialog pos={pos} />}
       </div>
     );
   }

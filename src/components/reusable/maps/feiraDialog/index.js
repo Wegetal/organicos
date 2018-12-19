@@ -1,13 +1,30 @@
 import React from "react";
 import { Map, GoogleApiWrapper, Marker } from "google-maps-react";
-
+import marker from "../marker.png";
 export class MapContainerDialog extends React.Component {
   render() {
-    const { google } = this.props;
+    const { google, handleClick, location, pos } = this.props;
 
     return (
       <div>
-        <Map containerStyle={{ height: "92%" }} google={google} zoom={14} />
+        <Map
+          onClick={handleClick}
+          containerStyle={{ height: "30%", width: "80%", margin: "15px 10px" }}
+          google={google}
+          initialCenter={pos}
+          zoom={14}
+        >
+          {location && (
+            <Marker
+              title={"localização da feira"}
+              position={location}
+              icon={{
+                url: marker,
+                scaledSize: new google.maps.Size(36, 46)
+              }}
+            />
+          )}
+        </Map>
       </div>
     );
   }

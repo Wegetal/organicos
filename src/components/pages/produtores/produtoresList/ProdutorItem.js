@@ -6,11 +6,11 @@ import {
   ExpansionPanel,
   ExpansionPanelSummary,
   ExpansionPanelDetails,
-  Avatar,
-  Tabs,
-  Tab,
-  List,
-  ListItem
+  Avatar
+  // Tabs,
+  // Tab,
+  // List,
+  // ListItem
 } from "@material-ui/core";
 
 class ProdutorItem extends React.Component {
@@ -21,7 +21,7 @@ class ProdutorItem extends React.Component {
     this.props.setActiveTab(0);
   }
   render() {
-    const { classes, produtor, value } = this.props;
+    const { classes, produtor } = this.props;
     return (
       <ExpansionPanel>
         <ExpansionPanelSummary classes={{ content: classes.content }}>
@@ -31,7 +31,7 @@ class ProdutorItem extends React.Component {
           {produtor.name}
         </ExpansionPanelSummary>
         <ExpansionPanelDetails className={classes.panel}>
-          <Tabs
+          {/* <Tabs
             fullWidth
             classes={{ indicator: classes.tabsIndicator }}
             value={value}
@@ -60,7 +60,7 @@ class ProdutorItem extends React.Component {
                 <div>Quantia: 50</div>
               </div>
             )}
-          </div>
+          </div> */}
         </ExpansionPanelDetails>
       </ExpansionPanel>
     );
@@ -82,11 +82,11 @@ const style = () => ({
   }
 });
 const mapStateToProps = state => ({
-  value: state.navigationState.value
+  value: state.navigationState.item
 });
 
 const mapDispatchToProps = dispatch => ({
-  setActiveTab: value => dispatch({ type: "SET_TAB_VALUE", value })
+  setActiveTab: value => dispatch({ type: "SET_TAB_ITEM", value })
 });
 export default compose(
   connect(
